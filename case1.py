@@ -2,10 +2,10 @@ def case1(clause, i):
     variables = [f"T{i}_0", f"T{i}_1"]
     clauses = [clause.copy(), clause.copy(), clause.copy(), clause.copy()]
 
-    clauses[0].extend([variables[0],     variables[1]])
-    clauses[1].extend([variables[0], f"!{variables[1]}"])
-    clauses[2].extend([f"!{variables[0]}",     variables[1]])
-    clauses[3].extend([f"!{variables[0]}", f"!{variables[1]}"])
+    clauses[0].extend([      variables[0],       variables[1]])
+    clauses[1].extend([      variables[0], '!' + variables[1]])
+    clauses[2].extend(['!' + variables[0],       variables[1]])
+    clauses[3].extend(['!' + variables[0], '!' + variables[1]])
 
     return variables, clauses
 
