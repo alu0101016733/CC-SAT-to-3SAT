@@ -3,7 +3,7 @@ def case4plus(clause, i):
     for j in range(len(clause) - 3):
         variables.append(f"T{i}_{j}")
 
-    tInUse = 0;
+    tInUse = 0
 
     clauses = []
     clauses.append([clause[0], clause[1], variables[tInUse]])

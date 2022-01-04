@@ -1,0 +1,89 @@
+from SAT import SAT
+from SAT_3 import SAT_3
+
+class SAT2SAT_3:
+  def __init__(self, problem_SAT = None):
+    self.problem_SAT = problem_SAT
+    self.problem_3SAT = SAT2SAT_3.transform(problem_SAT)
+    
+  @staticmethod
+  def case1(clause, i = 0):
+    variables = [f"T{i}_0", f"T{i}_1"]
+    clauses = [clause.copy(), clause.copy(), clause.copy(), clause.copy()]
+
+    clauses[0].extend([      variables[0],       variables[1]])
+    clauses[1].extend([      variables[0], '!' + variables[1]])
+    clauses[2].extend(['!' + variables[0],       variables[1]])
+    clauses[3].extend(['!' + variables[0], '!' + variables[1]])
+
+    return variables, clauses
+
+  @staticmethod
+  def case2(clause, i = 0):
+    variables = f"T{i}_0"
+   
+    clauses = [clause.copy(), clause.copy()]
+    clauses[0].append(variables)
+    clauses[1].append(f"!{variables}")
+
+    return [variables], clauses
+
+  @staticmethod
+  def case3(clause):
+    return [], [clause]
+
+  @staticmethod
+  def case4plus(clause, i = 0):
+    variables = []
+    for j in range(len(clause) - 3):
+        variables.append(f"T{i}_{j}")
+
+    tInUse = 0
+
+    clauses = []
+    clauses.append([clause[0], clause[1], variables[tInUse]])
+
+    for j in range(1, len(variables)):
+        clauses.append(['!'+variables[tInUse], clause[j + 1], variables[tInUse + 1]])
+        tInUse += 1
+
+    clauses.append(['!'+variables[tInUse], clause[-2], clause[-1]])
+    return variables, clauses
+
+  @staticmethod
+  def transform(problem_SAT):
+    problem_3SAT = SAT_3()
+    problem_3SAT.variables = problem_SAT.variables.copy()
+    new_variables = []
+    new_clauses = []
+    for i, clause in enumerate(problem_SAT):
+      if len(clause) == 1:
+        new_variables, new_clauses = SAT2SAT_3.case1(clause, i)
+      elif len(clause) == 2:
+        new_variables, new_clauses = SAT2SAT_3.case2(clause, i)
+      elif len(clause) == 3:
+        new_variables, new_clauses = SAT2SAT_3.case3(clause)
+        print (new_variables, new_clauses)
+      elif len(clause) >= 4:
+        new_variables, new_clauses = SAT2SAT_3.case4plus(clause, i)
+      else:
+        raise ValueError("Error: Invalid length of clause")
+
+      for new_variable in new_variables:
+        problem_3SAT.add_variable(new_variable)
+      for new_clause in new_clauses:
+        problem_3SAT.add_clause(new_clause)
+    
+    return problem_3SAT
+
+
+def run():
+  problem = SAT('SAT.json')
+  print (problem)
+  objeto = SAT2SAT_3(problem)
+  result = objeto.problem_3SAT
+  print (result)
+  
+
+if __name__ == '__main__':
+  run()

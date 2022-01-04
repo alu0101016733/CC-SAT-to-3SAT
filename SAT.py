@@ -10,7 +10,6 @@ class SAT:
     self.clauses = []
     with open(json_path, "r") as file:
       data = json.load(file)
-      #print (data)
       self.variables = data['U']
       self.clauses = data['C']
     
@@ -38,6 +37,12 @@ class SAT:
   def __iter__(self)-> list:
     for clause in self.clauses:
       yield clause
+
+  def to_json(self, name = 'SAT.json'):
+    with open(name, "w") as file:
+      json.dump({"U": self.variables, "C": self.clauses}, file)
+
+
   
 
 def run():
@@ -45,6 +50,8 @@ def run():
   print (objeto)
   for clause in objeto:
     print (clause)
+  objeto.to_json('test.json')
+  
 
 if __name__ == '__main__':
   run()
