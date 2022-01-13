@@ -16,6 +16,7 @@ import sys
 
 from SAT import SAT
 from SAT2SAT_3 import SAT2SAT_3
+from checkResult import *
 
 
 def run():
@@ -35,6 +36,11 @@ def run():
 
     result.to_json(sat3_filename)
     print(f"The {sat3_filename} has been exported.")
+
+    if checkSatAndSat3Files(sat_filename, sat3_filename):
+        print("SAT problem is Contained in converted 3SAT problem")
+    else:
+        print("There seems to be some kind of problem with the transformed file")
 
 
 if __name__ == "__main__":
