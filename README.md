@@ -1,13 +1,13 @@
 
 # Conversion SAT a 3SAT
 
+Trabajo de Complejidad Computacional de pasar el problema SAT al 3SAT.
+
 ### Autores:
 ##### ADRIÁN FLEITAS DE LA ROSA <alu0101024363@ull.edu.es>
 ##### THADDAUS HAASE <alu0101016733@ull.edu.es>
 ##### FRANCISCO JESUS MENDES GOMEZ <alu0101163970@ull.edu.es>
 ##### SERGIO TABARES HERNÁNDEZ <alu0101124896@ull.edu.es>
-
-Trabajo de Complejidad Computacional de pasar el problema SAT al 3SAT.
 
 ## Como se usa:
 
