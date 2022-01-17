@@ -11,7 +11,7 @@ Trabajo de Complejidad Computacional de pasar el problema SAT al 3SAT.
 
 ## Como se usa:
 
-Ejecutando el main pasando el fichero de SAT.json como primer argumento y el nombre del fichero en donde se quiere guardar el problema 3SAT resultante.
+Ejecutando el main pasando el fichero de SAT.json como primer argumento y el nombre del fichero en donde se quiere guardar el problema 3SAT resultante como segundo argumento.
 
 ## Ficheros:
 
