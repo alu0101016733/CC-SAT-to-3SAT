@@ -19,7 +19,7 @@ Ejecutando el main pasando el fichero de SAT.json como primer argumento y el nom
 
 ### main.py
 
-Este programa es el programa principal, espera dos argumentos, el primero es el fichero del problem SAT en formato json. El segundo el el nombre del fichero en el cual se va a guardar el problema 3SAT, también en formato json.
+Este programa es el programa principal, espera dos argumentos, el primero es el fichero del problem SAT en formato json, el segundo el el nombre del fichero en el cual se va a guardar el problema 3SAT, también en formato json.
 
 ### SAT.py
 
