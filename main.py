@@ -38,7 +38,7 @@ def run():
     print(f"The {sat3_filename} has been exported.")
 
     if checkSatAndSat3Files(sat_filename, sat3_filename):
-        print("SAT problem is Contained in converted 3SAT problem")
+        print("Ambos problemas son satisfactibles")
     else:
         print("There seems to be some kind of problem with the transformed file")
 
