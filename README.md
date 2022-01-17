@@ -11,6 +11,8 @@ Trabajo de Complejidad Computacional de pasar el problema SAT al 3SAT.
 
 ## Como se usa:
 
+Para usar el programa hace falta tener instalado Python 3.
+
 Ejecutando el main pasando el fichero de SAT.json como primer argumento y el nombre del fichero en donde se quiere guardar el problema 3SAT resultante como segundo argumento.
 
 ## Ficheros:
@@ -34,3 +36,8 @@ Esta clase contiene todos los metodos para transformar una clausula SAT a 3SAT. 
 ### checkResult.py
 
 Este programa comprueba si un problema SAT y 3SAT son iguales.
+
+
+## Examples
+
+En la carpeta examples podemos encontrar algunos ficheros de ejemplo de problemas SAT y 3SAT convertido por el programa.
