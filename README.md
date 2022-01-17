@@ -31,7 +31,7 @@ Este fichero contiene la clase para representar el problema 3SAT.
 
 ### SAT2SAT_3.py
 
-Esta clase contiene todos los metodos para transformar una clausula SAT a 3SAT. Estos metodos son estaticos para permitir el acceso directo a ellos.
+Esta clase contiene todos los métodos para transformar una clausula SAT a 3SAT. Estos métodos son estáticos para permitir el acceso directo a ellos.
 
 ### checkResult.py
 
