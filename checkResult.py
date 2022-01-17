@@ -29,7 +29,8 @@ def solveClause(clause, variableDict):
     result = False
     for value in clause:
         splittedValue = value.split('!')
-        result = result or getValue(splittedValue, variableDict[splittedValue[-1]])
+        result = result or getValue(splittedValue,
+            variableDict[splittedValue[-1]])
     return result
 
 def solve3SATClause(clause, variableDict, addedVariableDict):
@@ -38,9 +39,11 @@ def solve3SATClause(clause, variableDict, addedVariableDict):
     for value in clause:
         splittedValue = value.split('!')
         if splittedValue[-1] in variableDict:
-            result = result or getValue(splittedValue, variableDict[splittedValue[-1]])
+            result = result or getValue(splittedValue,
+                variableDict[splittedValue[-1]])
         else:
-            result = result or getValue(splittedValue, addedVariableDict[splittedValue[-1]])
+            result = result or getValue(splittedValue,
+                addedVariableDict[splittedValue[-1]])
     return result
 
 def addLogicOne(values, order):
@@ -111,7 +114,8 @@ def checkSatAndSat3Files(sat_path, sat_3_path):
             tmpResultForSat3 = True
             logger.debug('3SAT Tvalues: %s', addedValuesIn3SAT)
             for value in sat_3_json['C']:
-                solvedClause = solve3SATClause(value, valuesNotStartingWithT, addedValuesIn3SAT)
+                solvedClause = solve3SATClause(value, valuesNotStartingWithT,
+                    addedValuesIn3SAT)
                 tmpResultForSat3 = tmpResultForSat3 and solvedClause
                 logger.debug('Clause: %s, Result: %s', value, solvedClause)
             logger.debug('SAT3 Result: %s', tmpResultForSat3)
@@ -133,6 +137,7 @@ def checkSatAndSat3Files(sat_path, sat_3_path):
         if resultForSat != resultForSat3:
             logger.info("NOT THE SAME")
             return False
+    logger.info("Conversion was succesful")
     return True
 
 def run():
