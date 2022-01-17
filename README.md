@@ -31,13 +31,13 @@ Este fichero contiene la clase para representar el problema 3SAT.
 
 ### SAT2SAT_3.py
 
-Esta clase contiene todos los metodos para transformar una clausula SAT a 3SAT. Estos methodos son estaticos para permitir el acceso directo a ellos.
+Esta clase contiene todos los metodos para transformar una clausula SAT a 3SAT. Estos metodos son estaticos para permitir el acceso directo a ellos.
 
 ### checkResult.py
 
 Este programa comprueba si un problema SAT y 3SAT son iguales.
 
 
-## Examples
+## Ejemplos
 
 En la carpeta examples podemos encontrar algunos ficheros de ejemplo de problemas SAT y 3SAT convertido por el programa.
