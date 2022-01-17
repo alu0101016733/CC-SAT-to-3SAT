@@ -68,16 +68,16 @@ class SAT:
     def to_json(self, name='SAT.json'):
         '''Function to export this object to a json file.'''
         with open(name, "w") as file:
-            json.dump({"U": self.variables, "C": self.clauses}, file)
+            json.dump({"U": self.variables, "C": self.clauses}, file, indent=2)
 
 
 def run():
     '''Main function to test the SAT class.'''
-    objeto = SAT('SAT.json')
+    objeto = SAT('examples/SAT.json')
     print(objeto)
     for clause in objeto:
         print(clause)
-    objeto.to_json('test.json')
+    objeto.to_json('examples/test.json')
 
 
 if __name__ == '__main__':

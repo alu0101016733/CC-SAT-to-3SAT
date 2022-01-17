@@ -97,7 +97,7 @@ class SAT2SAT_3:
 
 def run():
     '''Main function to test the SAT2SAT_3 class.'''
-    problem = SAT('SAT.json')
+    problem = SAT('examples/SAT.json')
     print(problem)
     objeto = SAT2SAT_3(problem)
     result = objeto.problem_3SAT
