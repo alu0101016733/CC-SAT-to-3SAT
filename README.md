@@ -33,12 +33,12 @@ C: {[u1, !u2, T0_0], [u1, !u2, !T0_0], [!u1, u2, u1], [u3, T2_0, T2_1], [u3, T2_
 The 3SAT problem has been generated.
 
 The examples/3SAT.json has been exported.
-Ambos problemas son satisfactibles con:
-{'u1': False, 'u2': True, 'u3': False, 'u4': False, 'T0_0': False, 'T2_0': False, 'T2_1': False, 'T3_0': True}
+Both problems are satisfiable with:
+{'u1': False, 'u2': False, 'u3': True, 'u4': True, 'T0_0': False, 'T2_0': False, 'T2_1': False, 'T3_0': True}
+{'u1': True, 'u2': False, 'u3': True, 'u4': False, 'T0_0': False, 'T2_0': False, 'T2_1': False, 'T3_0': True}
 {'u1': True, 'u2': False, 'u3': True, 'u4': True, 'T0_0': False, 'T2_0': False, 'T2_1': False, 'T3_0': True}
-{'u1': True, 'u2': True, 'u3': False, 'u4': False, 'T0_0': False, 'T2_0': False, 'T2_1': False, 'T3_0': True}
+{'u1': True, 'u2': True, 'u3': True, 'u4': False, 'T0_0': False, 'T2_0': False, 'T2_1': False, 'T3_0': False}
 {'u1': True, 'u2': True, 'u3': True, 'u4': True, 'T0_0': False, 'T2_0': False, 'T2_1': False, 'T3_0': False}
-{'u1': False, 'u2': False, 'u3': False, 'u4': False, 'T0_0': False, 'T2_0': False, 'T2_1': False, 'T3_0': False}
 ```
 Y el resultado de la conversion es guardado en examples/3SAT.json: 
 
