@@ -39,7 +39,7 @@ def run():
 
     checkedProblem = checkSatAndSat3Files(sat_filename, sat3_filename)
     if checkedProblem[0]:
-        print("Ambos problemas son satisfactibles con:")
+        print("Both problems are satisfiable with:")
         for value in checkedProblem[1]:
             print(value)
     else:
