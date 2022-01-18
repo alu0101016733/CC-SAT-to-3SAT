@@ -130,19 +130,17 @@ def checkSatAndSat3Files(sat_path, sat_3_path):
 
         logger.debug('Complete SAT3 Result: %s', resultForSat3)
 
-
+        if resultForSat:
+            problemSatidfactible = valuesNotStartingWithT.copy()
+            problemSatidfactible.update(addedValuesIn3SAT)
+            satisResult.append(problemSatidfactible)
+            logger.info(problemSatidfactible)
 
         stopWhile = checkIfAllTrue(valuesNotStartingWithT)
         addLogicOne(valuesNotStartingWithT, oderOfValuesNotStartingWithT)
 
         logger.debug('%s\nFinished test: %s\n%s', 80*'=', counter, 80*'=')
         counter += 1
-
-        if resultForSat:
-            problemSatidfactible = valuesNotStartingWithT.copy()
-            problemSatidfactible.update(addedValuesIn3SAT)
-            satisResult.append(problemSatidfactible)
-            logger.info(problemSatidfactible)
 
         if resultForSat != resultForSat3:
             logger.info("NOT THE SAME")
