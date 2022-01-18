@@ -68,6 +68,8 @@ def checkSatAndSat3Files(sat_path, sat_3_path):
     sat_json = None
     sat_3_json = None
 
+    satisResult = []
+
     with open(sat_path, "r") as file:
         sat_json = json.load(file)
         # self.variables = data['U']
@@ -128,17 +130,25 @@ def checkSatAndSat3Files(sat_path, sat_3_path):
 
         logger.debug('Complete SAT3 Result: %s', resultForSat3)
 
+
+
         stopWhile = checkIfAllTrue(valuesNotStartingWithT)
         addLogicOne(valuesNotStartingWithT, oderOfValuesNotStartingWithT)
 
         logger.debug('%s\nFinished test: %s\n%s', 80*'=', counter, 80*'=')
         counter += 1
 
+        if resultForSat:
+            problemSatidfactible = valuesNotStartingWithT.copy()
+            problemSatidfactible.update(addedValuesIn3SAT)
+            satisResult.append(problemSatidfactible)
+            logger.info(problemSatidfactible)
+
         if resultForSat != resultForSat3:
             logger.info("NOT THE SAME")
-            return False
+            return [False, False]
     logger.info("Conversion was succesful")
-    return True
+    return [True, satisResult]
 
 def run():
     if len(sys.argv) != 3:
@@ -149,5 +159,5 @@ def run():
 
 
 if __name__ == '__main__':
-    logging.basicConfig(level=logging.DEBUG)
+    logging.basicConfig(level=logging.INFO)
     run()

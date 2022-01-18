@@ -37,8 +37,11 @@ def run():
     result.to_json(sat3_filename)
     print(f"The {sat3_filename} has been exported.")
 
-    if checkSatAndSat3Files(sat_filename, sat3_filename):
-        print("Ambos problemas son satisfactibles")
+    checkedProblem = checkSatAndSat3Files(sat_filename, sat3_filename)
+    if checkedProblem[0]:
+        print("Ambos problemas son satisfactibles con:")
+        for value in checkedProblem[1]:
+            print(value)
     else:
         print("There seems to be some kind of problem with the transformed file")
 
