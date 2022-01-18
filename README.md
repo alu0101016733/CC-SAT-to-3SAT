@@ -11,6 +11,25 @@ Trabajo de Complejidad Computacional de pasar el problema SAT al 3SAT.
 
 ## Como se usa:
 
+```bash
+ubuntu@ubutnu:~/SAT-to-3SAT$ python3 main.py examples/SAT.json examples/3SAT.json 
+U: {u1, u2, u3, u4}
+C: {[u1, !u2], [!u1, u2, u1], [u3], [!u3, u2, u1, u4]}
+The SAT problem has been loaded.
+
+U: {u1, u2, u3, u4, T0_0, T2_0, T2_1, T3_0}
+C: {[u1, !u2, T0_0], [u1, !u2, !T0_0], [!u1, u2, u1], [u3, T2_0, T2_1], [u3, T2_0, !T2_1], [u3, !T2_0, T2_1], [u3, !T2_0, !T2_1], [!u3, u2, T3_0], [!T3_0, u1, u4]}
+The 3SAT problem has been generated.
+
+The examples/3SAT.json has been exported.
+Ambos problemas son satisfactibles con:
+{'u1': False, 'u2': True, 'u3': False, 'u4': False, 'T0_0': False, 'T2_0': False, 'T2_1': False, 'T3_0': True}
+{'u1': True, 'u2': False, 'u3': True, 'u4': True, 'T0_0': False, 'T2_0': False, 'T2_1': False, 'T3_0': True}
+{'u1': True, 'u2': True, 'u3': False, 'u4': False, 'T0_0': False, 'T2_0': False, 'T2_1': False, 'T3_0': True}
+{'u1': True, 'u2': True, 'u3': True, 'u4': True, 'T0_0': False, 'T2_0': False, 'T2_1': False, 'T3_0': False}
+{'u1': False, 'u2': False, 'u3': False, 'u4': False, 'T0_0': False, 'T2_0': False, 'T2_1': False, 'T3_0': False}
+```
+
 Para usar el programa hace falta tener instalado Python 3.
 
 Ejecutando el main pasando el fichero de SAT.json como primer argumento y el nombre del fichero en donde se quiere guardar el problema 3SAT resultante como segundo argumento.
