@@ -11,8 +11,19 @@ Trabajo de Complejidad Computacional de pasar el problema SAT al 3SAT.
 
 ## Como se usa:
 
+Para usar el programa hace falta tener instalado Python 3.
+
+Ejecutando el main pasando el fichero de SAT.json como primer argumento y el nombre del fichero en donde se quiere guardar el problema 3SAT resultante como segundo argumento.
+
+### Ejemplo:
+queremos convertir el problema SAT en examples/SAT.json a 3SAT:
+
 ```bash
-ubuntu@ubutnu:~/SAT-to-3SAT$ python3 main.py examples/SAT.json examples/3SAT.json 
+ubuntu@ubutnu:~/SAT-to-3SAT$ python3 main.py examples/SAT.json examples/3SAT.json
+```
+Como resultado de lo anterior obtenemos en el terminal:
+
+```bash 
 U: {u1, u2, u3, u4}
 C: {[u1, !u2], [!u1, u2, u1], [u3], [!u3, u2, u1, u4]}
 The SAT problem has been loaded.
@@ -29,10 +40,7 @@ Ambos problemas son satisfactibles con:
 {'u1': True, 'u2': True, 'u3': True, 'u4': True, 'T0_0': False, 'T2_0': False, 'T2_1': False, 'T3_0': False}
 {'u1': False, 'u2': False, 'u3': False, 'u4': False, 'T0_0': False, 'T2_0': False, 'T2_1': False, 'T3_0': False}
 ```
-
-Para usar el programa hace falta tener instalado Python 3.
-
-Ejecutando el main pasando el fichero de SAT.json como primer argumento y el nombre del fichero en donde se quiere guardar el problema 3SAT resultante como segundo argumento.
+Y el resultado de la conversion es guardado en examples/3SAT.json: 
 
 ## Ficheros:
 
